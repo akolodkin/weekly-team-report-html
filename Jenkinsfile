@@ -3,7 +3,7 @@ pipeline {
         docker { image 'node:16.13.1-alpine' }
     }
     tools {
-        docker 'docker'
+        dockerTool 'docker'
     }
     stages {
         stage('prep') {
