@@ -23,6 +23,18 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        
+         stage('publish-to-s3 ') {
+            agent {
+                docker {
+                    image 'amazon/aws-cli'
+                }
+            }
+            steps {
+                sh "ls -la"
+                sh 'aws --version'
+            }
+        }
 
         // stage('terraform install and build') {
         //     steps {
