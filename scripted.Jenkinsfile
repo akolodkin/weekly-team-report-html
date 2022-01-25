@@ -7,7 +7,7 @@ node {
         git url: REPO_URL, branch: 'develop-team-2'
     }
     stage('Build') {
-        docker.withTool('docker-latest') {
+        docker.withTool('docker') {
             sh "pwd"
             sh "ls -la"
             sh "ls -la ./docker"
