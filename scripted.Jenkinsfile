@@ -7,6 +7,8 @@ node {
         git url: REPO_URL, branch: 'develop-team-2'
     }
     stage('Build') {
+        sh "pwd"
+        sh "ls -la"
         sh "ls -la ./docker"
     }
 }
