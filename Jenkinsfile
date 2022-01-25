@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'node:16.13.1-docker' }
+        docker { 
+            image 'node:16.13.1-docker' 
+            label 'docker-agent'
+        }       
     }
     
     tools {
