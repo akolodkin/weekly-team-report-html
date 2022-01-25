@@ -2,9 +2,6 @@ pipeline {
     agent {
         docker { image 'node:16.13.1-alpine' }
     }
-    tools {
-        dockerTool 'docker'
-    }
     stages {
         stage('prep') {
             steps {
