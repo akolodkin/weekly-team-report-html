@@ -7,9 +7,11 @@ node {
         git url: REPO_URL, branch: 'develop-team-2'
     }
     stage('Build') {
-        sh "pwd"
-        sh "ls -la"
-        sh "ls -la ./docker"
+        docker.withTool('docker-latest') {
+            sh "pwd"
+            sh "ls -la"
+            sh "ls -la ./docker"
+        }
     }
 }
 //END-OF-SCRIPT
