@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker { 
-            image 'node:16'
-        }       
-    }
+    agent any
     
     tools {
         dockerTool 'docker' 
@@ -18,6 +14,11 @@ pipeline {
             }
         }
         stage('nmp-build') {
+            agent {
+                docker {
+                    image 'node:16'
+                }
+            }
             steps {
                 sh 'npm install'
                 sh 'npm run build'
