@@ -9,6 +9,5 @@ node {
     stage('Build') {
         sh "ls -la ./docker"
     }
-    */
 }
 //END-OF-SCRIPT
