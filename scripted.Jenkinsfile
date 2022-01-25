@@ -4,7 +4,7 @@ node {
     def REPO_URL = 'https://github.com/akolodkin/weekly-team-report-html.git'
     
     stage('Clone') {        
-        git url: REPO_URL, branch: develop-team-2
+        git url: REPO_URL, branch: 'develop-team-2'
     }
     stage('Build') {
         sh "ls -la ./docker"
