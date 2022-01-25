@@ -10,7 +10,7 @@ node {
         docker.withTool('docker') {
             sh "pwd"
             sh "ls -la"
-            sh "ls -la ./docker"
+            sh "docker ps"
         }
     }
 }
