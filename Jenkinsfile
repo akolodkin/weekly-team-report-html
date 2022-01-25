@@ -3,6 +3,10 @@ pipeline {
         docker { image 'node:16.13.1-alpine' }
     }
     stages {
+         stage('Initialize'){
+            def dockerHome = tool 'docker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }        
         stage('prep') {
             steps {
                 git url: 'https://github.com/akolodkin/weekly-team-report-html.git', branch: 'develop-team-2'
