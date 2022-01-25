@@ -1,9 +1,10 @@
 pipeline {
     agent {
         docker { image 'node:16.13.1-docker' }
-        
-        def dockerHome = tool 'docer'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+    
+    tools {
+        dockerTool 'docker' 
     }
         
     stages {
