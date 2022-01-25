@@ -1,14 +1,16 @@
 pipeline {
     agent {
-        docker { image 'node:16.13.1-alpine' }
+        docker { image 'node:16.13.1-docker' }
+        
+        def dockerHome = tool 'docer'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
         
     stages {
         
 
         stage('prep') {
-            steps {
-                def dockerHome = tool 'docker'        
+            steps {        
                 git url: 'https://github.com/akolodkin/weekly-team-report-html.git', branch: 'develop-team-2'
             }
         }
